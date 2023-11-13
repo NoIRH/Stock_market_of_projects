@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+<title>ФОРМА</title>
+{% endblock %}
+{% block content %}
+<form method="post" action="create">
+{% csrf_token %}
+Фамилия<input required type="text" name="firstname"/> <br>
+Имя<input required type="text" name="lastname"  /><br>
+Отчество<input required type="text" name="sername"  /><br>
+Статус <select required name="status_id">
+<option disabled>Выберите статус</option>
+<option value="student">Студент</option>
+<option value="teacher">Преподаватель</option>
+<option value="company">Представитель компании</option>
+</select><br>
+
+Фото:<input type="file" name="photo" multiple accept="image/*,image/jpeg"><br>
+Дата рождения: <input type="date" name="birth_date" /><br>
+Почта: <input type="email" name="email"  /><br>
+Контакты: <input type="text" name="contact_info" /><br>
+Резюме: <input type="text" name="skills"  /><br>
+Дополнительная информация:<input type="text" name="extrainfo" /><br>
+Ссылки:<input type="text" name="links" /><br>
+
+<input type="submit" name="button_next" value="Далее" /><br>
+<!-- <input type="submit" name="button" onclick="MyProfile/extra_form.html" value="Далее" /><br>  -->
+<!-- <button onclick="window.location.href = 'MyProfile/extra_form.html'">Далее</button>  -->
+</form> 
+
+
+{% endblock content %}
